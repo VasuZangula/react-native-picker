@@ -268,9 +268,9 @@
                     NSString *str=[NSString stringWithFormat:@"%@",[self.weightArry objectAtIndex:i]];
                     totalweight=totalweight+str.doubleValue;
                 }
-                NSString *comStr=[NSString stringWithFormat:@"%@",[self.weightArry objectAtIndex:component]];
+              
                 
-                return _lineWith*comStr.doubleValue/totalweight;
+                return _lineWith/(totalweight > 3 ? totalweight : 3); // when it is small than two alignment distorts
             }else
             {
                 if (self.weightArry.count>0) {
